@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Sistema Profesional para Farmacias | Bolivia">
-    <meta property="og:description" content="Control total de inventario, vencimientos, ventas y proveedores para farmacias en Bolivia.">
-    <meta property="og:image" content="https://tu-sitio.netlify.app/preview.jpg">
-    <meta property="og:url" content="https://tu-sitio.netlify.app/">
-    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sistemas Gastronómicos | Soluciones Web Bolivia">
+<meta property="og:description" content="Impulse su restaurante con sistemas de pedidos y reservas. Planes mensuales y a medida.">
+<meta property="og:image" content="https://tu-sitio.netlify.app/preview.jpg">
+<meta property="og:url" content="https://tu-sitio.netlify.app/">
+<meta property="og:type" content="website">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sistema Profesional para Farmacias">
-    <meta name="twitter:description" content="Inventario inteligente, alertas de vencimiento y POS rápido para farmacias.">
-    <meta name="twitter:image" content="https://tu-sitio.netlify.app/preview.jpg">
-
-    <title>Sistema Profesional para Farmacias | Bolivia</title>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sistemas Gastronómicos Pro">
+<meta name="twitter:description" content="Tecnología escalable para el sector gastronómico en Bolivia.">
+<meta name="twitter:image" content="https://tu-sitio.netlify.app/preview.jpg">
+    <title>Sistemas Gastronómicos | Consultoría Senior Bolivia</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
@@ -29,18 +28,21 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-main); }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-main); -webkit-font-smoothing: antialiased; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
         
+        /* Navbar */
         nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
         .nav-content { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-weight: 800; font-size: 1.2rem; color: var(--brand-dark); }
 
+        /* Hero */
         header { background: var(--white); padding: 80px 0 40px; text-align: center; border-bottom: 1px solid var(--border); }
-        header h1 { font-size: 2.6rem; font-weight: 800; color: var(--brand-dark); margin-bottom: 15px; }
-        header p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+        header h1 { font-size: 2.8rem; font-weight: 800; color: var(--brand-dark); letter-spacing: -1px; margin-bottom: 15px; }
+        header p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
 
+        /* Toggle Switch Senior Design */
         .pricing-toggle {
             display: flex;
             align-items: center;
@@ -48,16 +50,13 @@
             margin: 40px 0;
             gap: 15px;
         }
-
         .switch {
             position: relative;
             display: inline-block;
             width: 50px;
             height: 26px;
         }
-
         .switch input { opacity: 0; width: 0; height: 0; }
-
         .slider {
             position: absolute;
             cursor: pointer;
@@ -66,7 +65,6 @@
             transition: .4s;
             border-radius: 34px;
         }
-
         .slider:before {
             position: absolute;
             content: "";
@@ -76,171 +74,230 @@
             transition: .4s;
             border-radius: 50%;
         }
-
         input:checked + .slider { background-color: var(--brand-primary); }
         input:checked + .slider:before { transform: translateX(24px); }
-
+        
         .toggle-label { font-weight: 600; font-size: 0.9rem; color: var(--brand-dark); }
         .save-badge { background: #dcfce7; color: #166534; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; }
 
+        /* Cards Grid */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 60px; }
-
+        
         .card {
             background: var(--white);
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 40px;
-            transition: 0.3s;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
         }
-
         .card:hover { border-color: var(--brand-primary); box-shadow: 0 10px 30px rgba(0,0,0,0.04); }
         .card.featured { border: 2px solid var(--brand-primary); position: relative; }
-
-        .featured-tag {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--brand-primary);
-            color: white;
-            padding: 4px 15px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 800;
-        }
+        .featured-tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--brand-primary); color: white; padding: 4px 15px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; }
 
         .card h3 { font-size: 1.1rem; color: var(--brand-dark); margin-bottom: 10px; }
-
+        .price-display { margin-bottom: 25px; }
         .amount { font-size: 2.5rem; font-weight: 800; color: var(--brand-dark); }
         .period { font-size: 0.9rem; color: var(--text-main); }
+        .promo-subtext { font-size: 0.8rem; color: var(--brand-primary); font-weight: 600; height: 20px; margin-top: 5px; }
 
-        .features { list-style: none; margin: 20px 0 30px; flex-grow: 1; }
+        .features { list-style: none; margin-bottom: 30px; flex-grow: 1; }
         .features li { font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; }
         .features li::before { content: "●"; color: var(--brand-primary); font-size: 0.6rem; margin-right: 12px; }
 
         .btn {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            text-align: center;
-            border-radius: 8px;
-            font-weight: 700;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            font-size: 0.9rem;
+            display: block; width: 100%; padding: 14px; text-align: center; border-radius: 8px;
+            font-weight: 700; text-decoration: none; transition: 0.2s; cursor: pointer; border: none; font-size: 0.9rem;
         }
-
         .btn-dark { background: var(--brand-dark); color: white; }
+        .btn-dark:hover { background: #1e293b; }
         .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--brand-dark); }
+        .btn-outline:hover { background: #f1f5f9; }
 
+        /* Section Medida */
         .medida-section { background: #f1f5f9; padding: 80px 0; border-radius: 40px; margin-bottom: 80px; }
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { font-size: 2rem; color: var(--brand-dark); margin-bottom: 10px; }
 
         footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border); font-size: 0.8rem; }
 
+        /* Animaciones de cambio de precio */
+        .price-animation { animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
 <nav>
     <div class="container nav-content">
-        <div class="logo">FARMA_SYS</div>
-        <div style="font-size: 0.7rem; font-weight: 700; color: var(--brand-primary); letter-spacing: 1px;">SOLUCIÓN PROFESIONAL</div>
+        <div class="logo">FREELANCE_ENGINE.</div>
+        <div style="font-size: 0.7rem; font-weight: 700; color: var(--brand-primary); letter-spacing: 1px;">ESTÁNDAR SENIOR</div>
     </div>
 </nav>
 
 <header>
     <div class="container">
-        <h1>Sistema Profesional para Farmacias</h1>
-        <p>Controle inventario por lotes, vencimientos, ventas rápidas y proveedores desde una sola plataforma diseñada para farmacias en Bolivia.</p>
+        <h1>Sistemas para Restaurantes</h1>
+        <p>Elija el modelo que mejor se adapte a su flujo de caja y necesidades operativas.</p>
+        
+        <div class="pricing-toggle">
+            <span class="toggle-label">Mensual</span>
+            <label class="switch">
+                <input type="checkbox" id="billingToggle" onchange="togglePricing()">
+                <span class="slider"></span>
+            </label>
+            <span class="toggle-label">Anual</span>
+            <span class="save-badge">Ahorre hasta 40%</span>
+        </div>
     </div>
 </header>
 
 <section class="container" style="padding: 60px 0;">
     <div class="grid">
-
         <div class="card">
-            <h3>Plan Básico</h3>
-            <p class="amount">Bs 180</p>
-            <p class="period">/ mes</p>
+            <h3>SaaS Essential</h3>
+            <div class="price-display">
+                <span class="amount" id="price-ess">Bs 120</span>
+                <span class="period" id="period-ess">/ mes</span>
+                <p class="promo-subtext" id="promo-ess">Promo: Bs 180 tras mes 3</p>
+            </div>
             <ul class="features">
-                <li>Inventario con Lotes y Vencimiento</li>
-                <li>Registro de Ventas (POS)</li>
-                <li>Control de Compras</li>
-                <li>Reporte Diario</li>
+                <li>Menú Digital QR</li>
+                <li>Pedidos por WhatsApp</li>
+                <li>Soporte Estándar</li>
+                <li>Hosting Incluido</li>
             </ul>
-            <button class="btn btn-outline" onclick="contactar('Plan Básico Farmacia')">Empezar</button>
+            <button class="btn btn-outline" onclick="contactar('SaaS Essential')">Empezar</button>
         </div>
 
         <div class="card featured">
             <div class="featured-tag">RECOMENDADO</div>
-            <h3>Plan Profesional</h3>
-            <p class="amount">Bs 350</p>
-            <p class="period">/ mes</p>
+            <h3>SaaS Professional</h3>
+            <div class="price-display">
+                <span class="amount" id="price-pro">Bs 250</span>
+                <span class="period" id="period-pro">/ mes</span>
+                <p class="promo-subtext" id="promo-pro">Promo: Bs 350 tras mes 3</p>
+            </div>
             <ul class="features">
-                <li>Inventario Inteligente por Lote</li>
-                <li>Alertas 30/60/90 días</li>
-                <li>Ventas con Código de Barras</li>
-                <li>Margen de Ganancia Automático</li>
-                <li>Reportes Mensuales</li>
+                <li>Pedidos Web Directos</li>
+                <li>Sistema de Reservas</li>
+                <li>Panel Admin Real-time</li>
+                <li>Reportes de Ventas</li>
             </ul>
-            <button class="btn btn-dark" onclick="contactar('Plan Profesional Farmacia')">Empezar</button>
+            <button class="btn btn-dark" onclick="contactar('SaaS Professional')">Empezar</button>
         </div>
 
         <div class="card">
-            <h3>Plan Premium</h3>
-            <p class="amount">Bs 600</p>
-            <p class="period">/ mes</p>
+            <h3>SaaS Premium</h3>
+            <div class="price-display">
+                <span class="amount" id="price-pre">Bs 500</span>
+                <span class="period" id="period-pre">/ mes</span>
+                <p class="promo-subtext" id="promo-pre">Promo: Bs 750 tras mes 3</p>
+            </div>
             <ul class="features">
-                <li>Multiusuario (Cajero/Admin/Dueño)</li>
-                <li>Control de Deudas a Proveedores</li>
-                <li>Productos Más Vendidos</li>
-                <li>Baja Rotación</li>
-                <li>Soporte Prioritario</li>
+                <li>Gestión de Inventarios</li>
+                <li>Control de Insumos</li>
+                <li>Multisucursal</li>
+                <li>Soporte 24/7</li>
             </ul>
-            <button class="btn btn-outline" onclick="contactar('Plan Premium Farmacia')">Empezar</button>
+            <button class="btn btn-outline" onclick="contactar('SaaS Premium')">Empezar</button>
         </div>
-
     </div>
 </section>
 
 <section class="container medida-section">
     <div class="section-title">
-        <h2>Licencia Permanente</h2>
-        <p>Instalación local. Usted es dueño del sistema. Sin mensualidades.</p>
+        <h2>Licenciamiento Pago Único</h2>
+        <p>Usted es el dueño del software. Sin mensualidades.</p>
     </div>
-
     <div class="grid">
         <div class="card">
-            <h3>Licencia Profesional</h3>
-            <p class="amount">Bs 6.000</p>
+            <h3>Plan Básico</h3>
+            <p class="amount">Bs 1.500</p>
             <p class="period">Pago Único</p>
-            <ul class="features">
-                <li>Inventario Completo</li>
-                <li>Control de Vencimientos</li>
-                <li>POS Avanzado</li>
-                <li>Capacitación Incluida</li>
+            <ul class="features" style="margin-top:20px;">
+                <li>Web Informativa</li>
+                <li>Menú Digital</li>
+                <li>Hosting 1 año gratis</li>
             </ul>
-            <button class="btn btn-outline" onclick="contactar('Licencia Profesional Farmacia')">Consultar</button>
+            <button class="btn btn-outline" onclick="contactar('Plan Básico - Único')">Consultar</button>
+        </div>
+        <div class="card">
+            <h3>Plan Profesional</h3>
+            <p class="amount">Bs 3.500</p>
+            <p class="period">Pago Único</p>
+            <ul class="features" style="margin-top:20px;">
+                <li>Sistema de Pedidos</li>
+                <li>Gestor de Reservas</li>
+                <li>Código Fuente Entregado</li>
+            </ul>
+            <button class="btn btn-outline" onclick="contactar('Plan Profesional - Único')">Consultar</button>
+        </div>
+        <div class="card">
+            <h3>Plan Premium</h3>
+            <p class="amount">Bs 6.000</p>
+            <p class="period">Desde</p>
+            <ul class="features" style="margin-top:20px;">
+                <li>ERP Gastronómico</li>
+                <li>Inventarios Avanzados</li>
+                <li>Consultoría Senior</li>
+            </ul>
+            <button class="btn btn-outline" onclick="contactar('Plan Premium - Único')">Consultar</button>
         </div>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Sistema Profesional para Farmacias | Bolivia</p>
-    <p style="margin-top: 10px; color: #94a3b8;">Soluciones tecnológicas para farmacias independientes y cadenas pequeñas</p>
+    <p>© 2026 Ingeniería y Desarrollo Web | Contacto Técnico Directo: 68086937</p>
+    <p style="margin-top: 10px; color: #94a3b8;">Bolivia - Soluciones Escalables para el Sector Gastronómico</p>
 </footer>
 
 <script>
-function contactar(plan) {
-    const numero = "59168086937";
-    const msg = encodeURIComponent(`Hola, deseo información del ${plan}.`);
-    window.open(`https://wa.me/${numero}?text=${msg}`, "_blank");
-}
+    const pricing = {
+        monthly: {
+            ess: ["Bs 120", "/ mes", "Promo: Bs 180 tras mes 3"],
+            pro: ["Bs 250", "/ mes", "Promo: Bs 350 tras mes 3"],
+            pre: ["Bs 500", "/ mes", "Promo: Bs 750 tras mes 3"]
+        },
+        yearly: {
+            ess: ["Bs 1.150", "/ año", "Ahorra Bs 290 anuales"],
+            pro: ["Bs 2.200", "/ año", "Ahorra Bs 800 anuales"],
+            pre: ["Bs 4.800", "/ año", "Ahorra Bs 1.200 anuales"]
+        }
+    };
+
+    function togglePricing() {
+        const isYearly = document.getElementById('billingToggle').checked;
+        const data = isYearly ? pricing.yearly : pricing.monthly;
+        const type = isYearly ? "Anual" : "Mensual";
+
+        updatePrice('ess', data.ess);
+        updatePrice('pro', data.pro);
+        updatePrice('pre', data.pre);
+    }
+
+    function updatePrice(id, values) {
+        const amtEl = document.getElementById(`price-${id}`);
+        const perEl = document.getElementById(`period-${id}`);
+        const prmEl = document.getElementById(`promo-${id}`);
+
+        amtEl.classList.remove('price-animation');
+        void amtEl.offsetWidth; // Trigger reflow
+        amtEl.classList.add('price-animation');
+
+        amtEl.innerText = values[0];
+        perEl.innerText = values[1];
+        prmEl.innerText = values[2];
+    }
+
+    function contactar(plan) {
+        const isYearly = document.getElementById('billingToggle').checked;
+        const modalidad = isYearly ? "ANUAL" : "MENSUAL";
+        const numero = "59168086937";
+        const msg = encodeURIComponent(`Hola, solicito información técnica del plan: ${plan} (${modalidad}).`);
+        window.open(`https://wa.me/${numero}?text=${msg}`, "_blank");
+    }
 </script>
 
 </body>
